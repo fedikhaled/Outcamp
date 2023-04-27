@@ -11,7 +11,7 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
-import bgimg from '../images/bgimg.jpg';
+/*import bgimg from '../images/bgimg.jpg';*/
 import Unav from './Unav';
 import { Link } from 'react-router-dom';
 

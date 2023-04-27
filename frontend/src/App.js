@@ -2,13 +2,16 @@ import { lazy, Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Loading from "./Loading/Loading"
 import Signup from './Pages/Signup';
-import VerifyEmail from './Pages/VerifyEmail';
+import VerifyEmail from './auxPages/VerifyEmail';
 import UserEdit from './Pages/UserEdit';
 
 import CreateEvent from './Pages/CreateEvent';
-import ResetPassword from './Pages/ResetPassword'
-import NotFound from './Pages/NotFound'
+import ResetPassword from './auxPages/ResetPassword'
+import NotFound from './auxPages/NotFound'
 import Login from './Pages/Login'
+import Dashboard from './AdminInterface/Dashboard';
+import Users from './AdminInterface/Organizers';
+
 const UserDashboard = lazy(() => new Promise(resolve => setTimeout(() => resolve(import('./user/UserDashboard')), 1000)));
 
 
@@ -27,7 +30,10 @@ function App() {
             <Route path="/CreateEvent" element={<CreateEvent />} />
             <Route path="/" element={<UserDashboard />} />
             <Route path="/ResetPassword" element={<ResetPassword />} />
+            <Route path="/Admin/Dashboard" element={<Dashboard />} />
+            <Route path="/Admin/Organizers" element={<Users />} />
             <Route path="*" element={<NotFound />} />
+            
           </Routes>
         </Suspense>
       </BrowserRouter>

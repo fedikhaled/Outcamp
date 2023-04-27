@@ -8,7 +8,7 @@ import {
     Text
     } from '@chakra-ui/react';
     import {Link} from 'react-router-dom';
-    import Unav from './Unav';
+    import Unav from '../Pages/Unav';
     
     export default function ResetPassword() {
     return (

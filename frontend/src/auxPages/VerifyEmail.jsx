@@ -3,13 +3,13 @@ import {
   Button,
   FormControl,
   Flex,
-  Input,
+ 
   Stack,
   useColorModeValue,
   HStack,
 } from '@chakra-ui/react';
 import { PinInput, PinInputField } from '@chakra-ui/react';
-import Unav from './Unav';
+import Unav from '../Pages/Unav';
 
 export default function VerifyEmail() {
   return (
