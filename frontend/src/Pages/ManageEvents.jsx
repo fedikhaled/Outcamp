@@ -15,17 +15,23 @@ import beach from '../images/beach.jpg';
 import river from '../images/river.jpg';
 import HomeRando from '../images/HomeRando.jpg';
 
-import { FaStar, FaRegStar, FaTrash } from 'react-icons/fa';
+import { FaStar, FaRegStar, FaTrash, FaEdit } from 'react-icons/fa';
 
 function ManageEvents() {
   const [events, setEvents] = useState([
-    { id: 1, name: 'Event 1', image: beach, rating: 3 },
-    { id: 2, name: 'Event 2', image: river, rating: 5 },
-    { id: 2, name: 'Event 2', image:HomeRando, rating: 5 },
+    { id: 1, name: 'Summer Camping Trip ', image: beach, rating: 3 },
+    { id: 2, name: 'Camping', image: river, rating: 5 },
+    { id: 3, name: 'Hiking and Nature Photography', image: HomeRando, rating: 5 },
+    { id: 4, name: 'Outdoor Yoga Retreat', image: HomeRando, rating: 3 },
   ]);
 
   const handleDeleteEvent = (eventId) => {
     setEvents((prevEvents) => prevEvents.filter((event) => event.id !== eventId));
+  };
+
+  const handleModifyEvent = (eventId) => {
+    // Placeholder implementation, replace with your own logic
+    console.log(`Modify event with ID: ${eventId}`);
   };
 
   const renderRatingStars = (rating) => {
@@ -68,6 +74,13 @@ function ManageEvents() {
                 </Box>
                 <HStack>
                   {renderRatingStars(event.rating)}
+                  <IconButton
+                    aria-label="Modify event"
+                    icon={<FaEdit />}
+                    onClick={() => handleModifyEvent(event.id)}
+                    colorScheme="teal"
+                    variant="ghost"
+                  />
                   <IconButton
                     aria-label="Delete event"
                     icon={<FaTrash />}

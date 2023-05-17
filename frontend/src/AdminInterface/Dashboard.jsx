@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Flex,
@@ -8,12 +8,6 @@ import {
   useColorMode,
   Text,
   Stack,
-  Table,
-  Thead,
-  Tbody,
-  Tr,
-  Th,
-  Td,
   IconButton,
   Avatar,
   Menu,
@@ -26,12 +20,13 @@ import {
   DrawerContent,
   DrawerHeader,
   DrawerBody,
-  DrawerCloseButton
+  DrawerCloseButton,
 } from '@chakra-ui/react';
 import { RiDashboardLine, RiCalendarLine, RiUserLine, RiFileListLine } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
-import { FaBars, FaUser, FaCog, FaSignOutAlt } from 'react-icons/fa';
-import Users from './Organizers'
+import Organizers from './Organizers';
+import ManageEvents from './Events'; // Import the ManageEvents component
+
 export default function AdminDashboard() {
   const [users, setUsers] = useState([
     { id: 1, name: 'John Doe', email: 'johndoe@example.com' },
@@ -60,6 +55,7 @@ export default function AdminDashboard() {
   ]);
   const { colorMode, toggleColorMode } = useColorMode();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [activeComponent, setActiveComponent] = useState(null);
 
   const handleDrawerOpen = () => {
     setIsDrawerOpen(true);
@@ -89,7 +85,6 @@ export default function AdminDashboard() {
             aria-label="Open menu"
             fontSize="20px"
             variant="ghost"
-            icon={<FaBars />}
             onClick={handleDrawerOpen}
             mb={2}
           />
@@ -104,48 +99,17 @@ export default function AdminDashboard() {
           
           
           <Stack spacing={2}>
-          <Button variant="ghost" leftIcon={<RiDashboardLine />}><Link to='/Admin/Dashboard'>Dashboard</Link></Button>
-      <Button variant="ghost" leftIcon={<RiCalendarLine />}><Link to='/Admin/Events'>Events</Link></Button>
-      <Button variant="ghost" leftIcon={<RiUserLine />}><Link to='/Admin/Organizers'>Organizers</Link></Button>
-      <Button variant="ghost" leftIcon={<RiFileListLine />}><Link to='/Admin/Requests'>Requests</Link></Button>
+            <Button variant="ghost" leftIcon={<RiDashboardLine />}><Link to='/Admin/Dashboard'>Dashboard</Link></Button>
+            <Button variant="ghost" leftIcon={<RiCalendarLine />} onClick={() => setActiveComponent('events')}>Events</Button> {/* Update the onClick handler */}
+            <Button variant="ghost" leftIcon={<RiUserLine />} onClick={() => setActiveComponent('organizers')}>Users</Button>
+            <Button variant="ghost" leftIcon={<RiFileListLine />}><Link to='/Admin/Requests'>Requests</Link></Button>
           </Stack>
         </Box>
         <Box w={{ base: '100%', md: '80%' }} p={4}>
-          <Flex justifyContent="space-between" alignItems="center" mb={4}>
-            <Heading as="h1" size="lg">
-              Dashboard
-            </Heading>
-            <Menu>
-              <MenuButton as={IconButton} icon={<FaUser />} variant="ghost" />
-              <MenuList>
-                <MenuItem>Profile</MenuItem>
-                <MenuItem>Settings</MenuItem>
-                <Link to='/'><MenuItem>Logout</MenuItem></Link>
-              </MenuList>
-            </Menu>
-          </Flex>
-          <Box mb={8}>
-            <Input placeholder="Search..." />
-          </Box>
-          
+          {activeComponent === 'organizers' && <Organizers />}
+          {activeComponent === 'events' && <ManageEvents />} {/* Render ManageEvents when activeComponent is 'events' */}
         </Box>
       </Flex>
-      <Drawer isOpen={isDrawerOpen} placement="left" onClose={handleDrawerClose}>
-        <DrawerOverlay />
-        <DrawerContent>
-          <DrawerCloseButton />
-          <DrawerHeader>Navigation</DrawerHeader>
-          <DrawerBody>
-            <Stack spacing={2}>
-              <Button variant="ghost">Dashboard</Button>
-              <Button variant="ghost">Orders</Button>
-              <Button variant="ghost">Customers</Button>
-              <Button variant="ghost">Products</Button>
-              <Button variant="ghost">Settings</Button>
-            </Stack>
-          </DrawerBody>
-        </DrawerContent>
-      </Drawer>
     </>
   );
 }

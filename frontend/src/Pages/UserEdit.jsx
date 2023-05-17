@@ -39,10 +39,10 @@ export default function UserEdit() {
           my={12}
         >
           <Heading lineHeight={1.1} fontSize={{ base: "2xl", sm: "3xl" }}>
-            User Profile Edit
+             Profile Edit
           </Heading>
           <FormControl id="userName">
-            <FormLabel>User Image</FormLabel>
+            <FormLabel>profile Image</FormLabel>
             <Stack direction={["column", "row"]} spacing={6}>
               <Center>
                 <Avatar size="xl" src="https://bit.ly/sage-adebayo">
@@ -63,12 +63,7 @@ export default function UserEdit() {
             </Stack>
           </FormControl>
           <FormControl id="userName" isRequired>
-            <FormLabel>User name</FormLabel>
-            <Input
-              placeholder="UserName"
-              _placeholder={{ color: "gray.500" }}
-              type="text"
-            />
+         
           </FormControl>
           <FormControl id="email" isRequired>
             <FormLabel>Email address</FormLabel>

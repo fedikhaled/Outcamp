@@ -19,7 +19,7 @@ export default function Signup() {
         minH={'100vh'}
         align={'center'}
         justify={'center'}
-        bg={useColorModeValue('#f9f7f1', '#5b5f5d')}
+        bg={useColorModeValue('#ffffff', '#5b5f5d')}
       >
         <Box
           rounded={'lg'}
@@ -30,7 +30,7 @@ export default function Signup() {
           maxW={'lg'}
         >
           <Box textAlign="center">
-            <Heading fontSize={'4xl'} mb={5} color={useColorModeValue('#383838', '#f7f7f7')}>
+            <Heading fontSize={'4xl'} mb={5} color={useColorModeValue('#black', '#f7f7f7')}>
               Join our Adventure!
             </Heading>
           </Box>

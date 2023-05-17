@@ -1,18 +1,24 @@
+import React, { useState } from 'react';
 import { Box, Button, Flex, Avatar, VStack, Icon, Heading, Text } from "@chakra-ui/react";
 import { MdEvent, MdPerson, MdExitToApp, MdSettings, MdAddCircleOutline } from "react-icons/md";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import ManageEvents from './ManageEvents';
+
 export default function OrganizerDash() {
+  const [activeComponent, setActiveComponent] = useState(null);
+
   return (
-    <Flex minHeight="100vh" bg="gray.100">
+    <Flex minHeight="100vh" bg="white">
       <Box w="250px" bg="white" p={4} shadow="md">
         <VStack spacing={6} align="stretch">
-          <Avatar name="John Doe" src="/avatar.png" size="xl" />
+          <Avatar size="xl" src="https://bit.ly/sage-adebayo" />
           <Button
             colorScheme="black"
             size="lg"
             variant="outline"
             leftIcon={<Icon as={MdEvent} boxSize={6} />}
             _hover={{ bg: "green.300" }}
+            onClick={() => setActiveComponent('events')}
           >
             My Organized Events
           </Button>
@@ -25,7 +31,6 @@ export default function OrganizerDash() {
             _hover={{ bg: "green.300" }}
           >
             <Link to="/CreateEvent"> Create Event</Link>
-          
           </Button>
          
           <Button
@@ -35,10 +40,9 @@ export default function OrganizerDash() {
             leftIcon={<Icon as={MdPerson} boxSize={6} />}
             _hover={{ bg: "green.300" }}
           >
-            <Link to="/UserEdit">
-            Profile
-            </Link>
+            <Link to="/UserEdit">Profile</Link>
           </Button>
+          
           <Button
             colorScheme="black"
             size="lg"
@@ -55,9 +59,7 @@ export default function OrganizerDash() {
             variant="solid"
             leftIcon={<Icon as={MdExitToApp} boxSize={6} />}
           >
-             <Link to="/">
-            Logout
-            </Link>
+            <Link to="/">Logout</Link>
           </Button>
         
         </VStack>
@@ -70,7 +72,7 @@ export default function OrganizerDash() {
           <Text fontSize="lg" color="gray.600">
             Here you can view and manage your events.
           </Text>
-          {/* Add your content here */}
+          {activeComponent === 'events' && <ManageEvents />}
         </Box>
       </Box>
     </Flex>

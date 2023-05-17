@@ -96,7 +96,7 @@ function Organizers() {
     <Box bg="gray.100" py={8}>
       <Box maxW="container.lg" mx="auto" bg="white" borderRadius="xl" boxShadow="md" p={6}>
         <Box display="flex" alignItems="center" justifyContent="space-between" mb={4}>
-          <Heading as="h1" size="xl">Organizers</Heading>
+          <Heading as="h1" size="xl">Users</Heading>
           <Box display="flex" alignItems="center">
             <InputGroup w="auto" mr={4}>
               <InputLeftElement pointerEvents="none" children={<SearchIcon color="gray.300" />} />

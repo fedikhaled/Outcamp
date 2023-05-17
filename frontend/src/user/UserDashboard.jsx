@@ -11,7 +11,7 @@ const events = [
     image: HomeRando,
   },
   {
-    title: "Hiking and Nature Photography Workshop",
+    title: "Hiking and Nature Photography",
     date: "July 22, 2023",
     image: river,
   },
@@ -37,17 +37,17 @@ const events = [
   },
   {
     title: "Snowshoeing Excursion",
-    date: "January 14-15, 2024",
+    date: "January 14-15, 2023",
     image: river,
   },
   {
     title: "Ice Fishing Tournament",
-    date: "February 18-19, 2024",
+    date: "February 18-19, 2023",
     image: river,
   },
   {
     title: "Spring Wildflowers Walk",
-    date: "March 23, 2024",
+    date: "March 23, 2023",
     image: beach,
   },
   {
