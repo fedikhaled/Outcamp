@@ -17,7 +17,7 @@ import { Link } from 'react-router-dom';
 
 export default function Login() {
   return (
-    <Box /* backgroundImage={bgimg}*/  backgroundSize="cover"
+    <Box /* backgroundImage={bgimg}*/   backgroundSize="cover"
     backgroundPosition="center"
     height="100vh"
     

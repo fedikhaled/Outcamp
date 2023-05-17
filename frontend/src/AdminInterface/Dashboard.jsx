@@ -127,47 +127,7 @@ export default function AdminDashboard() {
           <Box mb={8}>
             <Input placeholder="Search..." />
           </Box>
-          <Table variant="simple">
-            <Thead>
-              <Tr>
-                <Th>ID</Th>
-                <Th>Customer</Th>
-                <Th>Date</Th>
-                <Th>Total</Th>
-              </Tr>
-            </Thead>
-            <Tbody>
-              {orders.map((order) => (
-                <Tr key={order.id}>
-                  <Td>{order.id}</Td>
-                  <Td>{order.customer}</Td>
-                  <Td>{order.date}</Td>
-                  <Td>{order.total}</Td>
-                </Tr>
-              ))}
-            </Tbody>
-          </Table>
-          <Heading as="h2" size="md" mt={8} mb={4}>
-            Customers
-          </Heading>
-          <Table variant="simple">
-            <Thead>
-              <Tr>
-                <Th>ID</Th>
-                <Th>Name</Th>
-                <Th>Email</Th>
-              </Tr>
-            </Thead>
-            <Tbody>
-              {users.map((user) => (
-                <Tr key={user.id}>
-                  <Td>{user.id}</Td>
-                  <Td>{user.name}</Td>
-                  <Td>{user.email}</Td>
-                </Tr>
-              ))}
-            </Tbody>
-          </Table>
+          
         </Box>
       </Flex>
       <Drawer isOpen={isDrawerOpen} placement="left" onClose={handleDrawerClose}>

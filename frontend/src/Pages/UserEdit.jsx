@@ -21,9 +21,7 @@ import Unav from "./Unav";
 export default function UserEdit() {
   return (
     <Box>
-      <Box>
-        <Unav />
-      </Box>
+     
       <Flex
         minH={"100vh"}
         align={"center"}

@@ -46,7 +46,7 @@ export default function Signup() {
               bg={useColorModeValue('#ffffff', '#f7f7f7')}
             />
             <Button colorScheme="green" size="md" width="100%" bg={useColorModeValue('#68d391', '#48bb78')} _hover={{ bg: useColorModeValue('#48bb78', '#68d391') }}>
-              Sign Up
+             <Link to="/SignupRole">Sign Up</Link> 
             </Button>
             <Text mt={4} textAlign="center">
               Already have an account? <Link mb={4} to="/login">Login</Link>

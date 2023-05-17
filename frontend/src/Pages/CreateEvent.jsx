@@ -48,9 +48,7 @@ export default function CreateEvent() {
       alignItems="center"
       justifyContent="flex-start"
     >
-      <Box position="absolute" top="0" right="0">
-        <Unav />
-      </Box>
+      
 
       <Box
         mt={8}
