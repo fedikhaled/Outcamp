@@ -4,4 +4,4 @@ Users can browse and participate in various events such as camping trips, hackat
 
 In addition to user and organizer roles, Outcamp TN includes an admin role with special privileges. Administrators have access to an admin interface where they can manage users, events, and ensure the smooth functioning of the platform. They can review and approve event submissions and resolve any issues as needed.
 
-With the integration of Swagger UI, API documentation and testing are streamlined, ensuring smooth communication between the front-end, back-end, and admin components. Join the Outcamp TN community, discover thrilling outdoor adventures, participate in events.
+With the integration of Swagger UI, API documentation and testing are streamlined, ensuring smooth communication between the front-end, back-end, and admin components.
